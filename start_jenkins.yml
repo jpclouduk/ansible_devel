@@ -1,0 +1,20 @@
+---
+
+- name: Network Getting Started First Playbook Extended
+  gather_facts: false
+  hosts: jenkins
+  become: yes
+  become_user: root
+  tasks:
+
+    - name: Start Jenkins
+      systemd:
+        name: jenkins
+        state: started
+
+    - firewalld:
+        port: 8080/tcp
+        zone: public
+        permanent: yes
+        immediate: yes
+        state: enabled
