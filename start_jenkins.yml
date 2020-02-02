@@ -1,6 +1,7 @@
 ---
 
 - name: Network Getting Started First Playbook Extended
+  debugger: on_failed
   gather_facts: false
   hosts: jenkins
   become: yes
