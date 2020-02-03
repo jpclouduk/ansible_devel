@@ -2,7 +2,7 @@
 
 - name: Upgrade and add required base packages
   gather_facts: false
-  hosts: base
+  hosts: ansible
   tasks:
 
     - name: upgrade all packages
