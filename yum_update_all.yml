@@ -1,0 +1,25 @@
+---
+
+- name: Upgrade and add required base packages
+  gather_facts: false
+  hosts: base
+  tasks:
+
+    - name: upgrade all packages
+      yum:
+        name: '*'
+        state: latest
+      become: yes
+      become_user: root
+
+    - name: install 
+      yum:
+        name: "{{packages}}"
+        state: latest
+      vars:
+        packages:
+        - bind-utils
+        - telnet
+        - wget
+      become: yes
+      become_user: root
