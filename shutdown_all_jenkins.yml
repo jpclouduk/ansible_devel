@@ -1,0 +1,11 @@
+---
+- name: shutdown
+  become: 'yes'
+  become_method: sudo
+  hosts: jenkins
+
+  tasks:
+  - name: shutdown hosts
+    command: /sbin/shutdown -h now
+    when: ansible_facts['os_family'] == "RedHat"
+    ignore_errors: 'yes'
