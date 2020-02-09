@@ -11,3 +11,6 @@
         state: latest
       become: yes
       become_user: root
+      
+    - name: Unconditionally reboot the machine with all defaults
+      reboot:
