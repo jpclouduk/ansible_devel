@@ -2,7 +2,7 @@
 
 - name: Network Getting Started First Playbook Extended
   gather_facts: false
-  hosts: jenkins1234
+  hosts: jenkins12
   become: yes
   become_user: root
   tasks:
